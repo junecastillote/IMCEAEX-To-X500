@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.0
+.VERSION 1.1
 
 .GUID 910a560a-27de-4a03-bd5b-16a04d766779
 
@@ -50,4 +50,10 @@
     $IMCEAEX = ($IMCEAEX).Replace("+28", "(")
     $IMCEAEX = ($IMCEAEX).Replace("+29", ")")
     $IMCEAEX = ($IMCEAEX).Replace("+2E", ".")
-    Return $IMCEAEX
+    
+    Write-Host ""
+    Write-Host "- Converted to X500"
+    "X500:$($IMCEAEX)" | clip
+    Write-Host "- Copied to Clipboard"
+    Write-Host ""
+    Return "X500:$($IMCEAEX)"
